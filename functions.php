@@ -5,6 +5,7 @@ function init(): void {
     register_nav_menus([
         'main_menu' => 'Hauptnavigation',
         'top_menu'  => 'Top-Leiste',
+        'mobile_menu' => 'Mobiles Menü',
     ]);
     add_theme_support('custom-logo');
 
@@ -15,6 +16,8 @@ function load_styles() {
     wp_enqueue_style(
         'theme-style', get_stylesheet_uri()
     );
+    wp_enqueue_script('theme-menu', get_template_directory_uri() . '/js/menu.js', [], null, true);
+
 }
 add_action('wp_enqueue_scripts', 'load_styles');
 

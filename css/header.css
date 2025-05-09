@@ -1,0 +1,290 @@
+:root{
+  --white: #ffff;
+  --red: #EC101F;
+  --black: #241F24;
+}
+
+.container {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Top Navigation */
+.top-nav {
+  background: #fff;
+  height: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.top-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.top-nav-left a,
+.top-nav-right a {
+  color: #000;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+
+/* Main Menu */
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Desktop-Menü ===== */
+nav.desktop {
+  background-color: var(--red);
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: var(--white);
+}
+
+.desktop .logo {
+  height: 40px;
+}
+
+.desktop-menu,
+.desktop-menu-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.desktop-menu a,
+.desktop-menu-right a {
+  color: var(--white); /* Weiß als Textfarbe */
+  text-decoration: none; /* Entfernt Unterstreichung */
+}
+
+.desktop-menu a:hover,
+.desktop-menu-right a:hover {
+  color: var(--black); /* Weiß für Hover-Effekt */
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+.desktop-menu > li {
+  position: relative;
+  font-weight: bold;
+}
+
+.desktop-menu > li:hover > ul {
+  display: block;
+}
+
+.desktop-menu ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--red);
+  padding: 10px 0;
+}
+
+.desktop-menu ul li {
+  white-space: nowrap;
+  padding: 8px 16px;
+}
+
+.desktop-menu ul li:hover {
+  background-color: #b9040e;
+}
+
+/* ===== Mobile-Menü & Hamburger ===== */
+.hamburger {
+  display: none;
+  background-color: var(--red);
+  color: var(--white);
+  padding: 12px 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.overlay-menu {
+    position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: var(--red);
+transform: translateY(-100%);
+transition: transform 0.3s ease;
+z-index: 100;
+color: var(--white);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+padding: 0;
+}
+
+
+.overlay-menu > div {
+flex: 1;
+overflow-y: auto;
+padding: 20px;
+box-sizing: border-box;
+}
+
+#menu-toggle:checked ~ .overlay-menu {
+  transform: translateY(0);
+}
+
+.overlay-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay-top img {
+  height: 40px;
+}
+
+.close-btn {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile Menüeinträge */
+.menu-main ul > li {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-main li .submenu {
+  display: none;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.menu-main a{
+  color: var(--white); /* Weiß als Textfarbe */
+  text-decoration: none; /* Entfernt Unterstreichung */
+}
+
+.menu-main a:hover{
+  color: var(--black); /* Weiß für Hover-Effekt */
+}
+
+
+.menu-main li.open .submenu {
+  display: block;
+}
+
+.menu-main li::after {
+  content: "›";
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s;
+}
+
+.menu-main li.open::after {
+  transform: rotate(90deg);
+}
+
+.menu-secondary li {
+  margin: 14px 0;
+  font-size: 1.1rem;
+}
+
+.menu-footer {
+    padding: 20px;
+border-top: 1px solid #fff2;
+background: var(--red);
+position: sticky;
+bottom: 0;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-toggle input {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background: var(--white);
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.lang-toggle input::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--red);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.lang-toggle input:checked::before {
+  transform: translateX(20px);
+}
+
+/* ===== Responsive Verhalten ===== */
+@media (max-width: 768px) {
+  nav.desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .overlay-menu {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .overlay-menu,
+  .hamburger {
+    display: none;
+  }
+}
+
+.logo {
+  width: 90px;
+  height: 97px;
+  margin-right: 30px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

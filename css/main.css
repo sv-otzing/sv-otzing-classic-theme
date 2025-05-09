@@ -1,0 +1,25 @@
+:root{
+    --white: #ffff;
+    --red: #EC101F;
+    --black: #241F24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.page-container{
+    margin: 50px;
+    padding: 50px;
+}
+
+
