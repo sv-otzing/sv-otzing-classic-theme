@@ -55,7 +55,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    text-align: left;
+    text-align: center;
     padding: 40px 20px;
 }
 
@@ -105,12 +105,19 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer-logo {
+
+.custom-logo {
     height: 160px;
     width: auto;
+    display: block;
+    margin: 0 auto;
 }
+
 
 .footer-clubname {
     font-size: 1.5rem;
@@ -118,6 +125,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     animation: fadeInUp 1.5s ease;
+    padding-top: 50px;
 }
 
 

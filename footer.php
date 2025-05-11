@@ -40,7 +40,7 @@
 
     <div class="footer-bottom">
         <div class="footer-logo-wrapper">
-            <div class="logo">
+            <div class="footer-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php if (has_custom_logo()) {
                         the_custom_logo();
