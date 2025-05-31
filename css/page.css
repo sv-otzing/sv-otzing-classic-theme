@@ -1,0 +1,38 @@
+.page-header-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 60vh;
+  display: block;
+}
+
+.page-main.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.page-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  color: #111;
+}
+
+.page-meta {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.page-content {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #222;
+}
+
+.page-content p {
+  margin-bottom: 1.5em;
+}

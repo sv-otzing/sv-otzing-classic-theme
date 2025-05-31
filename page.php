@@ -1,13 +1,31 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
-<div class ="page-container" >
-<?php
-if (have_posts()) :
-    while (have_posts()) : the_post();
-        the_content();
-    endwhile;
-endif;
-?>
-</div>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<?php get_footer() ?>
+  <?php if (has_post_thumbnail()) : ?>
+    <div class="page-header-image">
+      <?php the_post_thumbnail('full'); ?>
+    </div>
+  <?php endif; ?>
+
+  <main class="page-main container">
+    <article <?php post_class('page-article'); ?>>
+
+                <header class="post-header">
+                    <h1 class="post-title"><?php the_title(); ?></h1>
+                    <div class="post-meta">
+                        <span><?php echo get_the_date('d. F Y'); ?></span>
+                    </div>
+
+                </header>
+
+      <div class="page-content">
+        <?php the_content(); ?>
+      </div>¸
+
+    </article>
+  </main>
+
+<?php endwhile; endif; ?>
+
+<?php get_footer(); ?>

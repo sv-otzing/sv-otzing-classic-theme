@@ -186,12 +186,12 @@ box-sizing: border-box;
 }
 
 .menu-main a{
-  color: var(--white); /* Weiß als Textfarbe */
-  text-decoration: none; /* Entfernt Unterstreichung */
+  color: var(--white); 
+  text-decoration: none; 
 }
 
 .menu-main a:hover{
-  color: var(--black); /* Weiß für Hover-Effekt */
+  color: var(--black); 
 }
 
 

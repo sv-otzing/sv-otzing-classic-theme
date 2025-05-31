@@ -12,13 +12,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 </head>
 
 <body <?php body_class(); ?>>
 
   <!-- Top Navigation Bar -->
   <nav class="top-nav">
-    <div class="container">
+    <div class="menu-container">
       <div class="top-nav-left">
         <?php
         wp_nav_menu([
