@@ -4,6 +4,8 @@ Author: Tobias Straßer
 Version: 1.0
 */
 
+@import url('css/variable.css');
+@import url('css/font.css');
 @import url('css/main.css');
 @import url('css/header.css');
 @import url('css/footer.css');

@@ -1,20 +1,20 @@
 .svo-button {
   display: inline-block;
-  background-color: #d00000; 
+  background-color: var(--red); 
   color: #ffffff;
   font-weight: bold;
   font-size: 1.1rem;
   padding: 0.8rem 1.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   text-decoration: none;
   text-align: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-light);
+  font-family: var(  --font-heading)
 }
-
 .svo-button:hover {
-  background-color: #a80000;
+  background-color: var(--red-dark);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 

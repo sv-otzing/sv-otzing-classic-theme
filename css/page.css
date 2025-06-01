@@ -7,32 +7,35 @@
 }
 
 .page-main.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: 'Helvetica Neue', sans-serif;
+  max-width: var(--container-width);
+  margin: var(--spacing-md) auto;
+  padding: var(--spacing-sm);
+  font-family: var(--font-body);
 }
 
 .page-title {
   font-size: 2.8rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-xs);
   line-height: 1.2;
-  color: #111;
+  color: var(--black);
+  font-family: var(--font-heading);
 }
 
 .page-meta {
-  color: #888;
+  color: var(--gray);
   font-size: 0.95rem;
-  margin-bottom: 30px;
+  margin-bottom: var(--spacing-md);
+  font-family: var(--font-body);
 }
 
 .page-content {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #222;
+  color: var(--black);
+  font-family: var(--font-body);
 }
 
 .page-content p {
-  margin-bottom: 1.5em;
+  margin-bottom: var(--spacing-sm);
 }

@@ -14,7 +14,7 @@
             <article <?php post_class('post-article'); ?>>
 
                 <header class="post-header">
-                    <h1 class="post-title"><?php the_title(); ?></h1>
+                    <h1><?php the_title(); ?></h1>
                     <div class="post-meta">
                         <span><?php echo get_the_date('d. F Y'); ?></span> |
                         <span><?php the_category(', '); ?></span>

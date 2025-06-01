@@ -12,8 +12,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -115,7 +115,15 @@
     </div>
 
     <div class="menu-footer">
-      <div>👤 LOGIN</div>
+      <?php if (get_theme_mod('facebook_url')): ?>
+        <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" class="social-icon facebook"
+          target="_blank">Facebook</a>
+      <?php endif; ?>
+      <?php if (get_theme_mod('instagram_url')): ?>
+        <a href="<?php echo esc_url(get_theme_mod('instagram_url')); ?>" class="social-icon instagram"
+          target="_blank">Instagram</a>
+      <?php endif; ?>
+
     </div>
   </div>
   </div>

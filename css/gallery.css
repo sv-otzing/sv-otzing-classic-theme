@@ -91,6 +91,6 @@
       }
 
       .carousel-dot.active {
-        background-color: #333;
+        background-color: var(--red);
       }
     }
