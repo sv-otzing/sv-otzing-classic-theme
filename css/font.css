@@ -1,21 +1,28 @@
-body, p {
+p,
+body {
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
     color: var(--black);
-    font-size: clamp(1rem, 2.5vw, 1.125rem); /* Responsive */
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
     font-weight: 400;
+
 }
 
 h1 {
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 700; 
+    font-weight: 700;
     font-style: normal;
-    font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive Größe */
-    line-height: 1.1; /* Enger für kraftvolleren Look */
-    text-transform: uppercase; /* Für Vereins-Look */
-    letter-spacing: 0.02em; /* Leichte Sperrung */
-    color: var(--red); /* Vereinsfarbe */
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    /* Responsive Größe */
+    line-height: 1.1;
+    /* Enger für kraftvolleren Look */
+    text-transform: uppercase;
+    /* Für Vereins-Look */
+    letter-spacing: 0.02em;
+    /* Leichte Sperrung */
+    color: var(--red);
+    /* Vereinsfarbe */
     margin-bottom: 1rem;
 }
 
@@ -38,6 +45,3 @@ h3 {
     color: var(--black);
     margin: 1.5rem 0 0.75rem 0;
 }
-
-
-

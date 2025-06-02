@@ -1,12 +1,10 @@
-@import url(main.css);
-
 .container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
-    width: 100vw;
+    width: 100%;
 }
 
 .site-footer {
@@ -36,7 +34,6 @@
 .sponsor-track img {
     height: 50px;
     object-fit: contain;
-    /* weiße Logos */
 }
 
 

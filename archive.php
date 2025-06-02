@@ -1,25 +1,45 @@
 <?php get_header(); ?>
 
 <main class="container archive-page">
-    <h1 class="archive-title"><?php the_archive_title(); ?></h1>
+    <h1><?php the_archive_title(); ?></h1>
     <p class="archive-description"><?php the_archive_description(); ?></p>
 
-    <?php if (have_posts()) : ?>
+    <?php if (have_posts()): ?>
         <div class="post-list">
-            <?php while (have_posts()) : the_post(); ?>
-                <article class="post-item">
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                    <p class="post-meta"><?php the_time('d.m.Y'); ?> | <?php the_category(', '); ?></p>
-                    <p><?php the_excerpt(); ?></p>
+            <?php while (have_posts()):
+                the_post(); ?>
+                <article class="news-item">
+                    <a href="<?php the_permalink(); ?>" class="news-link">
+                        <?php if (has_post_thumbnail()): ?>
+                            <?php the_post_thumbnail('medium_large', array('class' => 'wp-post-image')); ?>
+                        <?php else: ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-news.jpg"
+                                alt="<?php the_title(); ?>">
+                        <?php endif; ?>
+
+                        <div class="news-overlay">
+                            <?php
+                            $categories = get_the_category();
+                            if (!empty($categories)):
+                                ?>
+                                <span class="news-category"><?php echo esc_html($categories[0]->name); ?></span>
+                            <?php endif; ?>
+
+                            <h3 class="news-title entry-title"><?php the_title(); ?></h3>
+
+                            <div class="news-meta entry-meta">
+                                <?php echo get_the_date('l, d.m.Y'); ?>
+                            </div>
+                        </div>
+                    </a>
                 </article>
-                <hr>
             <?php endwhile; ?>
 
             <div class="pagination">
                 <?php the_posts_pagination(); ?>
             </div>
         </div>
-    <?php else : ?>
+    <?php else: ?>
         <p>Keine Beiträge gefunden.</p>
     <?php endif; ?>
 </main>
