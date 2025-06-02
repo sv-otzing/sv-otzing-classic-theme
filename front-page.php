@@ -165,8 +165,14 @@ $news_query = new WP_Query($args);
 
 <section class="section">
   <h1>Tradition Emotion SVO</h1>
-  <p>Der Sportverein Oberdorf verbindet seit über 50 Jahren Sport, Leidenschaft und Gemeinschaft. Mit über 300
-    Mitgliedern fördern wir den Fußballnachwuchs und bieten spannende Spiele auf dem heimischen Platz.</p>
+  <?php
+  $verein_text = get_field('verein_text', 24);
+  if ($verein_text):
+    echo wp_kses_post($verein_text);
+  else:
+    echo '<p>Hier entsteht gerade eine neue Vereinsbeschreibung.</p>';
+  endif;
+  ?>
   <div class="button-container">
     <a href="/verein" class="svo-button">
       <i class="fa fa-heart"></i> Mehr erfahren
