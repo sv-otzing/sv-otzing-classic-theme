@@ -4,8 +4,8 @@
     <h1><?php the_archive_title(); ?></h1>
     <p class="archive-description"><?php the_archive_description(); ?></p>
 
-    <?php if (have_posts()): ?>
-        <div class="post-list">
+    <div class="news-grid">
+        <?php if (have_posts()): ?>
             <?php while (have_posts()):
                 the_post(); ?>
                 <article class="news-item">
@@ -34,14 +34,13 @@
                     </a>
                 </article>
             <?php endwhile; ?>
-
             <div class="pagination">
                 <?php the_posts_pagination(); ?>
             </div>
-        </div>
-    <?php else: ?>
-        <p>Keine Beiträge gefunden.</p>
-    <?php endif; ?>
+        <?php else: ?>
+            <p>Keine Beiträge gefunden.</p>
+        <?php endif; ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>
