@@ -351,6 +351,7 @@ nav.desktop::after {
 }
 
 .menu-secondary a {
+  display: flex;
   color: var(--white);
   text-decoration: none;
   transition: color 0.3s ease;
@@ -367,6 +368,13 @@ nav.desktop::after {
   position: sticky;
   bottom: 0;
 }
+
+.menu-footer a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
 
 .lang-toggle {
   display: flex;
