@@ -29,3 +29,8 @@
 .post-content p {
   margin-bottom: 1.5em;
 }
+
+.post-category a{
+  text-decoration: none;
+  color: #888;
+}

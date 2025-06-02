@@ -28,7 +28,7 @@
                             <h3 class="news-title entry-title"><?php the_title(); ?></h3>
 
                             <div class="news-meta entry-meta">
-                                <?php echo get_the_date('l, d.m.Y'); ?>
+                                <?php echo get_the_date('d.m.Y'); ?>
                             </div>
                         </div>
                     </a>

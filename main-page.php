@@ -6,11 +6,18 @@
 get_header();
 ?>
 
-<div class="container">
-  <h1><?php the_title(); ?></h1>
+<main class="page-main container">
+  <header class="post-header">
+    <h1 class="post-title"><?php the_title(); ?></h1>
+    <div class="post-meta">
+      <span><?php echo get_the_date('d. F Y'); ?></span>
+    </div>
+
+  </header>
   <div class="page-content">
     <?php
-    while ( have_posts() ) : the_post();
+    while (have_posts()):
+      the_post();
       the_content();
     endwhile;
     ?>
@@ -23,8 +30,8 @@ get_header();
       'sort_column' => 'menu_order',
     ]);
 
-    if ( $subpages ) {
-      foreach ( $subpages as $page ) {
+    if ($subpages) {
+      foreach ($subpages as $page) {
         ?>
         <article class="news-item">
           <a href="<?php echo get_permalink($page->ID); ?>" class="news-link">
@@ -47,23 +54,7 @@ get_header();
     }
     ?>
   </div>
-</div>
+</main>
 
-<style>
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2em;
-  }
-
-  .subpages-list {
-    list-style-type: disc;
-    padding-left: 1.5em;
-  }
-
-  .subpages-list li {
-    margin: 0.5em 0;
-  }
-</style>
 
 <?php get_footer(); ?>

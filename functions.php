@@ -9,6 +9,22 @@ function init(): void
         'mobile_menu' => 'Mobiles Menü',
     ]);
     add_theme_support('custom-logo');
+    register_post_type('vorstand', [
+        'labels' => [
+            'name' => 'Vorstand',
+            'singular_name' => 'Vorstandsmitglied',
+            'add_new_item' => 'Neues Vorstandsmitglied hinzufügen',
+            'edit_item' => 'Vorstandsmitglied bearbeiten',
+            'all_items' => 'Alle Mitglieder',
+        ],
+        'public' => true,
+        'menu_icon' => 'dashicons-groups',
+        'has_archive' => false,
+        'rewrite' => ['slug' => 'vorstand'],
+        'supports' => ['title', 'thumbnail'],
+        'show_in_rest' => true, // Für Gutenberg
+    ]);
+
 
 }
 add_action('after_setup_theme', 'init');
@@ -47,3 +63,5 @@ function svo_customize_register($wp_customize)
     ]);
 }
 add_action('customize_register', 'svo_customize_register');
+
+

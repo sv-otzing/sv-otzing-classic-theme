@@ -17,7 +17,7 @@
                     <h1><?php the_title(); ?></h1>
                     <div class="post-meta">
                         <span><?php echo get_the_date('d. F Y'); ?></span> |
-                        <span><?php the_category(', '); ?></span>
+                        <span class = "post-category"><?php the_category(', '); ?></span>
                         <?php if (get_the_author()): ?>
                             <span> | Von <?php the_author(); ?></span>
                         <?php endif; ?>
