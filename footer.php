@@ -7,7 +7,8 @@
         <div class="sponsor-track">
             <?php
             for ($i = 1; $i <= 10; $i++):
-                $logo = get_field("sponsor_logo_$i", 24);
+                $startseite = get_page_by_title('Startseite');
+                $logo = get_field("sponsor_logo_$i", $startseite->ID);
                 if ($logo):
                     ?>
                     <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">

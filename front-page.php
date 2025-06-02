@@ -166,7 +166,8 @@ $news_query = new WP_Query($args);
 <section class="section">
   <h1>Tradition Emotion SVO</h1>
   <?php
-  $verein_text = get_field('verein_text', 24);
+  $startseite = get_page_by_title('Startseite');
+  $verein_text = get_field('verein_text', $startseite->ID);
   if ($verein_text):
     echo wp_kses_post($verein_text);
   else:
