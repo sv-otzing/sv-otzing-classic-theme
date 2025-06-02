@@ -6,6 +6,13 @@
 get_header();
 ?>
 
+<?php if (has_post_thumbnail()): ?>
+    <div class="post-header-image">
+        <?php the_post_thumbnail('full'); ?>
+    </div>
+<?php endif; ?>
+
+
 <main class="page-main container">
   <header class="post-header">
     <h1 class="post-title"><?php the_title(); ?></h1>

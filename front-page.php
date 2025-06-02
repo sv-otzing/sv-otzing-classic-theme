@@ -130,7 +130,7 @@ $news_query = new WP_Query($args);
           <h1>werde Teil des SV Otzing!</h1>
           <p>Engagiere dich in unserem Verein – ob als Spieler, Fan oder Unterstützer. Wir freuen uns auf dich!
           </p>
-          <a href="/mitgliedschaft" class="svo-button-white">
+          <a href="/verein/mitgliedschaft" class="svo-button-white">
             <i class="fa fa-futbol-o"></i> Jetzt Mitglied werden
           </a>
         </div>
