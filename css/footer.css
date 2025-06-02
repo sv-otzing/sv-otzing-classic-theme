@@ -1,8 +1,8 @@
 .container {
     min-height: 100vh;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    margin: 0;
     padding: 0;
     width: 100%;
 }
@@ -12,8 +12,7 @@
     color: white;
     position: relative;
     margin-top: auto;
-    width: 100vw;
-
+    width: 100%;
 }
 
 .footer-sponsors {
@@ -85,7 +84,7 @@
 }
 
 .footer-column a:hover {
-    color: #ffc107;
+    color: var(--red-light);
 }
 
 .footer-bottom {

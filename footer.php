@@ -1,27 +1,26 @@
 <?php wp_footer() ?>
-<div class="container">
 
 <footer class="site-footer">
 
     <div class="footer-sponsors">
 
-            <div class="sponsor-track">
-                <?php
-                for ($i = 1; $i <= 10; $i++):
-                    $logo = get_field("sponsor_logo_$i",24);
-                    if ($logo):
-                        ?>
-                        <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
-                        <?php
-                    endif;
-                endfor;
-                ?>
-            </div>
+        <div class="sponsor-track">
+            <?php
+            for ($i = 1; $i <= 10; $i++):
+                $logo = get_field("sponsor_logo_$i", 24);
+                if ($logo):
+                    ?>
+                    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+                    <?php
+                endif;
+            endfor;
+            ?>
+        </div>
     </div>
 
     <div class="footer-main">
         <div class="footer-column">
-        <h4>LINKS</h4>
+            <h4>LINKS</h4>
             <ul>
                 <li><a href="#">Downloads</a></li>
                 <li><a href="#">Datenschutz</a></li>
@@ -53,7 +52,6 @@
         <p class="footer-clubname">SV OTZING 1946 E.V.</p>
     </div>
 </footer>
-</div>
 
 </body>
 

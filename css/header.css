@@ -1,10 +1,9 @@
 .desktop-nav-container {
   width: 100%;
   margin: 0;
-  padding 0;
+  padding: 0;
 }
 
-/* Top Navigation */
 .top-nav {
   background: #fff;
   height: 30px;
