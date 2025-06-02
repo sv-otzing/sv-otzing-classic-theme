@@ -13,6 +13,23 @@
   box-shadow: var(--shadow-light);
   font-family: var(  --font-heading)
 }
+
+.svo-button-white {
+  display: inline-block;
+  background-color: var(--white); 
+  color: var(--black);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-light);
+  font-family: var(  --font-heading)
+}
+
 .svo-button:hover {
   background-color: var(--red-dark);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);

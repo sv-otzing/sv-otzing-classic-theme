@@ -5,7 +5,7 @@ function init(): void
     add_theme_support('post-thumbnails');
     register_nav_menus([
         'main_menu' => 'Hauptnavigation',
-        // 'top_menu' => 'Top-Leiste',
+        'top-left-menu' => 'Top-Leiste links',
         'mobile_menu' => 'Mobiles Menü',
     ]);
     add_theme_support('custom-logo');

@@ -20,24 +20,23 @@
   <div class="desktop-nav-container">
     <nav class="top-nav">
       <div class="menu-container">
-        <!--       <div class="top-nav-left">
-        <?php
-        wp_nav_menu([
-          'theme_location' => 'top_menu',
-          'container' => false,
-          'menu_class' => 'top-menu',
-        ]);
-        ?>
-      </div>
- -->
+        <div class="top-nav-left">
+          <?php
+          wp_nav_menu([
+            'theme_location' => 'top-left-menu',
+            'container' => false,
+            'menu_class' => 'top-left-menu',
+          ]);
+          ?>
+        </div>
         <div class="top-nav-right">
           <?php if (get_theme_mod('facebook_url')): ?>
-            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" class="social-icon facebook"
-              target="_blank">Facebook</a>
+            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank">Facebook <i
+                class="fa fa-facebook"></i> </a>
           <?php endif; ?>
           <?php if (get_theme_mod('instagram_url')): ?>
-            <a href="<?php echo esc_url(get_theme_mod('instagram_url')); ?>" class="social-icon instagram"
-              target="_blank">Instagram</a>
+            <a href="<?php echo esc_url(get_theme_mod('instagram_url')); ?>" target="_blank">Instagram <i
+                class="fa fa-instagram"></i></a>
           <?php endif; ?>
         </div>
       </div>
@@ -106,9 +105,9 @@
         <div class="menu-secondary">
           <?php
           wp_nav_menu([
-            'theme_location' => 'top_menu',
+            'theme_location' => 'top-left-menu',
             'container' => false,
-            'menu_class' => 'menu-main',
+            'menu_class' => 'top-left-menu',
             'fallback_cb' => false,
           ]);
           ?>

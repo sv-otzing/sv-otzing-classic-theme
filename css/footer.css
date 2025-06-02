@@ -53,6 +53,7 @@
     flex-wrap: wrap;
     text-align: center;
     padding: 40px 20px;
+    color: var(--white);
 }
 
 .footer-column {

@@ -23,18 +23,18 @@
         <div class="footer-column">
             <h4>LINKS</h4>
             <ul>
-                <li><a href="#">Downloads</a></li>
-                <li><a href="#">Datenschutz</a></li>
-                <li><a href="#">Impressum</a></li>
+                <li><a href="/downloads">Downloads</a></li>
+                <li><a href="/privacy">Datenschutz</a></li>
+                <li><a href="/impressum">Impressum</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4>KONTAKT</h4>
-            <p>Email: <a href="mailto:info@sv-otzing.de">info@sv-otzing.de</a></p>
+            <p class = "white">Email: <a href="mailto:info@sv-otzing.de">info@sv-otzing.de</a></p>
         </div>
         <div class="footer-column">
             <h4>ANFAHRT</h4>
-            <p>Schulweg 10<br>94563 Otzing</p>
+            <p class="white">Schulweg 10<br>94563 Otzing</p>
         </div>
     </div>
 

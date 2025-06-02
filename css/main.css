@@ -14,7 +14,11 @@ body {
     max-width: 1200px;
     background: var(--white);
     overflow-x: hidden;
-    margin: 2.5rem auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
 }
 
 
@@ -155,4 +159,8 @@ body {
 
 .entry-title {
     margin: 0;
+}
+
+.white {
+    color: var(--white);
 }

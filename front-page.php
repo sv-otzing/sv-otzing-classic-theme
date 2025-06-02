@@ -113,13 +113,45 @@ $news_query = new WP_Query($args);
 </section>
 
 <section class="section">
-  <h2>Werde Teil der SVO-Familie!</h2>
-  <p>Engagiere dich in unserem Verein – ob als Spieler, Fan oder Unterstützer. Wir freuen uns auf dich!</p>
-  <div class="button-container">
-    <a href="/mitglied-werden" class="svo-button">
-      <i class="fa fa-heart"></i> Jetzt Mitglied werden
-    </a>
+  <div class="banner-container">
+    <div class="banner-modern">
+      <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+      <div class="content">
+        <div class="text-content">
+          <h1>werde Teil des SV Otzing!</h1>
+          <p>Engagiere dich in unserem Verein – ob als Spieler, Fan oder Unterstützer. Wir freuen uns auf dich!
+          </p>
+          <a href="/mitgliedschaft" class="svo-button-white">
+            <i class="fa fa-futbol-o"></i> Jetzt Mitglied werden
+          </a>
+        </div>
+        <div class="photo-section">
+          <?php
+          $startseite = get_page_by_title('Startseite');
+          $logo = get_field("mitglieder_bild", $startseite->ID);
+          if ($logo):
+            ?>
+            <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+            <?php
+          endif;
+          ?>
+
+        </div>
+      </div>
+    </div>
+
   </div>
+
+
 </section>
 
 

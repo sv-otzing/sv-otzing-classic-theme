@@ -1,0 +1,230 @@
+       .banner-container {
+           width: 100%;
+           max-width: 100%;
+           margin: 0;
+           padding: 0 2rem;
+       }
+
+       /* Modern Gradient Banner */
+       .banner-modern {
+           position: relative;
+           background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 50%, #2c1810 100%);
+           border-radius: 20px;
+           padding: 4rem 3rem;
+           overflow: hidden;
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+           width: 100%;
+           margin: 2rem 0;
+       }
+
+       .banner-modern:hover {
+           transform: translateY(-5px);
+       }
+
+       .banner-modern::before {
+           content: '';
+           position: absolute;
+           top: -50%;
+           right: -30%;
+           width: 600px;
+           height: 600px;
+           background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+           border-radius: 50%;
+           animation: float 6s ease-in-out infinite;
+       }
+
+       .banner-modern::after {
+           content: '';
+           position: absolute;
+           bottom: -20%;
+           left: -20%;
+           width: 300px;
+           height: 300px;
+           background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), transparent);
+           border-radius: 50%;
+           animation: float 8s ease-in-out infinite reverse;
+       }
+
+
+       .content {
+           position: relative;
+           z-index: 10;
+           display: grid;
+           grid-template-columns: 1fr 400px;
+           align-items: center;
+           gap: 3rem;
+           max-width: 1400px;
+           margin: 0 auto;
+       }
+
+       .photo-section {
+           position: relative;
+           height: 300px;
+           border-radius: 15px;
+           overflow: hidden;
+           background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+           border: 2px solid rgba(255, 255, 255, 0.2);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           backdrop-filter: blur(10px);
+       }
+
+       .photo-section img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           border-radius: 13px;
+       }
+
+       .text-content h1 {
+           font-size: clamp(1.8rem, 4vw, 3rem);
+           font-weight: 900;
+           color: white;
+           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+           margin-bottom: 0.5rem;
+           letter-spacing: -0.02em;
+       }
+
+       .text-content p {
+           font-size: 1.1rem;
+           color: rgba(255, 255, 255, 0.9);
+           margin-bottom: 1.5rem;
+           line-height: 1.5;
+       }
+
+       .logo-section {
+           display: none;
+       }
+
+       .particles {
+           position: absolute;
+           width: 100%;
+           height: 100%;
+           overflow: hidden;
+           top: 0;
+           left: 0;
+       }
+
+       .particle {
+           position: absolute;
+           background: rgba(255, 255, 255, 0.1);
+           border-radius: 50%;
+           animation: particle-float 15s infinite linear;
+       }
+
+       .particle:nth-child(1) {
+           width: 4px;
+           height: 4px;
+           left: 10%;
+           animation-delay: 0s;
+       }
+
+       .particle:nth-child(2) {
+           width: 6px;
+           height: 6px;
+           left: 20%;
+           animation-delay: 2s;
+       }
+
+       .particle:nth-child(3) {
+           width: 3px;
+           height: 3px;
+           left: 30%;
+           animation-delay: 4s;
+       }
+
+       .particle:nth-child(4) {
+           width: 5px;
+           height: 5px;
+           left: 40%;
+           animation-delay: 6s;
+       }
+
+       .particle:nth-child(5) {
+           width: 4px;
+           height: 4px;
+           left: 50%;
+           animation-delay: 8s;
+       }
+
+       .particle:nth-child(6) {
+           width: 7px;
+           height: 7px;
+           left: 60%;
+           animation-delay: 10s;
+       }
+
+       .particle:nth-child(7) {
+           width: 3px;
+           height: 3px;
+           left: 70%;
+           animation-delay: 12s;
+       }
+
+       .particle:nth-child(8) {
+           width: 5px;
+           height: 5px;
+           left: 80%;
+           animation-delay: 14s;
+       }
+
+       @keyframes float {
+
+           0%,
+           100% {
+               transform: translateY(0) rotate(0deg);
+           }
+
+           50% {
+               transform: translateY(-20px) rotate(180deg);
+           }
+       }
+
+       @keyframes particle-float {
+           0% {
+               transform: translateY(100vh) translateX(0);
+               opacity: 0;
+           }
+
+           10% {
+               opacity: 1;
+           }
+
+           90% {
+               opacity: 1;
+           }
+
+           100% {
+               transform: translateY(-100px) translateX(50px);
+               opacity: 0;
+           }
+       }
+
+       .banner-label {
+           text-align: center;
+           margin-bottom: 1rem;
+           font-weight: 600;
+           color: #666;
+       }
+
+       @media (max-width: 968px) {
+           .content {
+               grid-template-columns: 1fr;
+               gap: 2rem;
+               text-align: center;
+           }
+
+           .photo-section {
+               height: 200px;
+               order: -1;
+           }
+
+           .banner-modern {
+               padding: 2rem 1.5rem;
+           }
+
+           .banner-container {
+               padding: 0 1rem;
+           }
+       }
