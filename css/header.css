@@ -396,6 +396,10 @@ nav.desktop::after {
     display: none;
   }
 
+  .top-nav{
+    display: none;
+  }
+
   .hamburger {
     display: block;
   }
