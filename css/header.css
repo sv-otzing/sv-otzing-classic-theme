@@ -208,7 +208,6 @@ nav.desktop::after {
 /* ===== Mobile-Menü & Hamburger ===== */
 .hamburger {
   display: none;
-  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
   color: var(--white);
   padding: 12px 20px;
   font-size: 2rem;
@@ -465,13 +464,9 @@ nav.desktop::after {
     height: 5rem;
     width: auto;
     margin: 0.5rem auto 0 1rem;
-    /* oben etwas Luft, links ausrichten */
     display: inline-block;
     position: relative;
     z-index: 101;
-
-
-
   }
 
   .logo-mobile img {
