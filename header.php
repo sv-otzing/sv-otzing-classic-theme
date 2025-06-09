@@ -46,7 +46,6 @@
     <!-- Main Navigation -->
 
     <!-- Mobile-Menü Toggle -->
-    <input type="checkbox" id="menu-toggle" />
 
     <!-- Desktop Menü -->
     <nav class="desktop">
@@ -75,36 +74,48 @@
 
     </nav>
 
-    <label for="menu-toggle" class="hamburger">☰</label>
+    <div class="mobile-menu-wrapper">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">☰</label>
 
-    <div class="overlay-menu">
-      <div>
-        <div class="overlay-top">
-          <div class="logo">
-            <a href="<?php echo esc_url(home_url('/')); ?>">
-              <?php if (has_custom_logo()) {
-                the_custom_logo();
-              } else {
-                bloginfo('name');
-              } ?>
-            </a>
-          </div>
-          <label for="menu-toggle" class="close-btn">✕</label>
-        </div>
-        <nav class="menu-main">
-          <?php
-          wp_nav_menu([
-            'theme_location' => 'mobile_menu',
-            'container' => false,
-            'menu_class' => 'menu-main',
-            'fallback_cb' => false,
-            'depth' => 1,
-          ]);
-          ?>
-        </nav>
+      <div class="logo-mobile">
+        <a href="<?php echo esc_url(home_url('/')); ?>">
+          <?php if (has_custom_logo()) {
+            the_custom_logo();
+          } else {
+            bloginfo('name');
+          } ?>
+        </a>
       </div>
 
-      <div class="menu-footer">
+      <div class="overlay-menu">
+        <div>
+          <div class="overlay-top">
+            <div class="logo">
+              <a href="<?php echo esc_url(home_url('/')); ?>">
+                <?php if (has_custom_logo()) {
+                  the_custom_logo();
+                } else {
+                  bloginfo('name');
+                } ?>
+              </a>
+            </div>
+            <label for="menu-toggle" class="close-btn">✕</label>
+          </div>
+          <nav class="menu-main">
+            <?php
+            wp_nav_menu([
+              'theme_location' => 'mobile_menu',
+              'container' => false,
+              'menu_class' => 'menu-main',
+              'fallback_cb' => false,
+              'depth' => 1,
+            ]);
+            ?>
+          </nav>
+        </div>
+
+        <!-- <div class="menu-footer">
         <?php if (get_theme_mod('facebook_url')): ?>
           <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank">Facebook <i
               class="fa fa-facebook"></i> </a>
@@ -114,10 +125,11 @@
               class="fa fa-instagram"></i></a>
         <?php endif; ?>
 
-        <div class="menu-secondary">
+        <div class="menu-secon‚dary">
         </div>
 
 
+      </div> -->
       </div>
     </div>
 

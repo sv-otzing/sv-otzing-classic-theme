@@ -30,11 +30,16 @@
         </div>
         <div class="footer-column">
             <h4>KONTAKT</h4>
-            <p class = "white">Email: <a href="mailto:info@sv-otzing.de">info@sv-otzing.de</a></p>
+            <p class="white">Email: <a href="mailto:vorstand@sv-otzing.de">info@sv-otzing.de</a></p>
         </div>
         <div class="footer-column">
             <h4>ANFAHRT</h4>
-            <p class="white">Schulweg 10<br>94563 Otzing</p>
+            <p class="white">
+                <a href="https://maps.app.goo.gl/pWgCqwKZcCDQvHDz6" target="_blank"
+                    rel="noopener noreferrer">
+                    Schulweg 10<br>94563 Otzing
+                </a>
+            </p>
         </div>
     </div>
 
