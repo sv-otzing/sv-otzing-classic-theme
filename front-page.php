@@ -109,7 +109,10 @@ $news_query = new WP_Query($args);
 
 <section class="section">
   <h1>Nächste Spiele</h1>
-
+  <div id="bfv1750015429708">Laden...</div>
+  <script>
+    BFVWidget.HTML5.zeigeVereinSpiele("00ES8GNI4S00000TVV0AG08LVUPGND5I", "bfv1750015429708", { height: "100%", width: "100%", selectedTab: BFVWidget.HTML5.vereinTabs.spiele, colorResults: "#1a1a1a", colorNav: "#ffffff", colorClubName: "#d32f2f", backgroundNav: "#d32f2f" });
+  </script>
 </section>
 
 <section class="section">
