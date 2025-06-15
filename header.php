@@ -31,11 +31,11 @@
         </div>
         <div class="top-nav-right">
           <?php if (get_theme_mod('facebook_url')): ?>
-            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank">Facebook <i
+            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank"> <i
                 class="fa fa-facebook"></i> </a>
           <?php endif; ?>
           <?php if (get_theme_mod('instagram_url')): ?>
-            <a href="<?php echo esc_url(get_theme_mod('instagram_url')); ?>" target="_blank">Instagram <i
+            <a href="<?php echo esc_url(get_theme_mod('instagram_url')); ?>" target="_blank"> <i
                 class="fa fa-instagram"></i></a>
           <?php endif; ?>
         </div>
