@@ -59,7 +59,7 @@ function load_styles()
 
 
 
-    if (is_page_template('template-vorstand.php')) {
+    if (is_page_template('vorstand.php')) {
         wp_enqueue_style('vorstand', $theme_dir . '/css/vorstand.css');
     }
 
