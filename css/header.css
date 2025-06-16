@@ -46,9 +46,38 @@
 .top-nav-left a,
 .top-nav-right a {
   color: #000;
-  list-style: none;
   text-decoration: none;
   margin: 1rem;
+  font-size: 0.85rem;
+  position: relative;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.top-nav-left a::after,
+.top-nav-right a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.top-nav-left a:hover,
+.top-nav-right a:hover {
+  color: #000;
+}
+
+.top-nav-left a:hover::after,
+.top-nav-right a:hover::after {
+  width: 100%;
 }
 
 /* Main Menu */
@@ -235,7 +264,7 @@ nav.desktop::after {
   color: var(--white);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 0;
 }
 
@@ -551,4 +580,38 @@ nav.desktop::after {
 
 .mobile-menu .menu-item a:hover {
   color: var(--red-light);
+}
+.menu-footer {
+  padding: 10px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+  position: sticky;
+  bottom: 0;
+}
+
+.menu-footer a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.menu-footer a:hover {
+  color: var(--red-light);
+}
+
+.menu-footer .fa {
+  margin-right: 0.25rem;
+}
+
+.menu-secondary {
+  margin-bottom: 10px;
+}
+
+.menu-icons {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
 }
