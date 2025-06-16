@@ -108,12 +108,54 @@
             wp_nav_menu([
               'theme_location' => 'mobile_menu',
               'container' => false,
-              'menu_class' => 'menu-main',
+              'menu_class' => 'mobile-menu',
               'fallback_cb' => false,
-              'depth' => 1,
+              'walker' => new class extends Walker_Nav_Menu {
+                public function start_lvl(&$output, $depth = 0, $args = null) {
+                  $output .= "<ul class=\"submenu\">";
+                  if ($depth === 0) {
+                    $url = '#';
+                    if (!empty($args->walker->last_item_url)) {
+                      $url = esc_url($args->walker->last_item_url);
+                    }
+                    $output .= "<li class=\"menu-item menu-item--overview\"><a href=\"$url\"><i class=\"fa fa-th overview-icon\"></i> Übersicht</a></li>";
+                  }
+                }
+                public $last_item_url = '#';
+                public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+                  $this->last_item_url = $item->url;
+                  $classes = implode(' ', $item->classes);
+                  $has_children = in_array('menu-item-has-children', $item->classes) ? ' has-children' : '';
+                  $output .= "<li class=\"menu-item $classes$has_children\"><a href=\"" . esc_url($item->url) . "\">" . esc_html($item->title);
+                  if ($has_children) {
+                    $output .= " <i class='fa fa-chevron-down submenu-toggle-icon'></i>";
+                  }
+                  $output .= "</a>";
+                }
+                public function end_el(&$output, $item, $depth = 0, $args = null) {
+                  $output .= "</li>";
+                }
+                public function end_lvl(&$output, $depth = 0, $args = null) {
+                  $output .= "</ul>";
+                }
+              }
             ]);
             ?>
           </nav>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              document.querySelectorAll('.has-children > a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                  e.preventDefault();
+                  const submenu = this.nextElementSibling;
+                  if (submenu) {
+                    submenu.style.maxHeight = submenu.style.maxHeight ? null : submenu.scrollHeight + "px";
+                    submenu.classList.toggle('open');
+                  }
+                });
+              });
+            });
+          </script>
         </div>
 
         <!-- <div class="menu-footer">

@@ -294,11 +294,15 @@ nav.desktop::after {
 }
 
 .menu-main li .submenu {
-  display: none;
-  margin-top: 10px;
-  font-size: 1.1rem;
-  font-weight: normal;
-  padding-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.menu-main .submenu.open {
+  max-height: 500px;
 }
 
 .menu-main .submenu li {
@@ -326,21 +330,6 @@ nav.desktop::after {
   display: block;
 }
 
-.menu-main li::after {
-  content: "›";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.3s ease;
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.menu-main li.open::after {
-  transform: translateY(-50%) rotate(90deg);
-  color: var(--white);
-}
 
 .menu-secondary li {
   margin: 14px 0;
@@ -511,4 +500,55 @@ nav.desktop::after {
 
 #menu-toggle:checked~.logo-mobile {
   display: none;
+}
+
+/* Added styles for mobile-menu with submenu toggle */
+.mobile-menu .menu-item {
+  margin: 10px 0;
+}
+
+.mobile-menu .menu-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+}
+
+
+
+.mobile-menu .submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+.mobile-menu .submenu.open {
+  max-height: 500px;
+}
+
+.mobile-menu .submenu .menu-item--overview a {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.overview-icon {
+  margin-right: 0.5rem;
+}
+.mobile-menu .menu-item a:hover {
+  color: var(--red-light);
+}
+
+/* Added styles for submenu toggle icon and hover effect */
+.submenu-toggle-icon {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu .menu-item a:hover {
+  color: var(--red-light);
 }
