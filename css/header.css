@@ -435,12 +435,14 @@ nav.desktop::after {
 }
 
 .mobile-menu-wrapper {
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
-  flex-direction: row-reverse;
-  padding: 0.5rem 0;
-  box-shadow: 0;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+    flex-direction: row-reverse;
+    padding: 0.5rem 0;
+    box-shadow: 0;
+    height: 4rem; /* Feste Höhe für den mobilen Header */
+    align-items: center;
 }
 
 /* ===== Responsive Verhalten ===== */
@@ -463,7 +465,7 @@ nav.desktop::after {
     transition: transform 0.3s ease;
     height: 5rem;
     width: auto;
-    margin: 0.5rem auto 0 1rem;
+    margin: 1.25rem auto 0 1rem;
     display: inline-block;
     position: relative;
     z-index: 101;
