@@ -37,12 +37,39 @@ add_action('init', 'add_categories_to_pages');
 
 function load_styles()
 {
-    wp_enqueue_style(
-        'theme-style',
-        get_stylesheet_uri()
-    );
-    wp_enqueue_script('theme-menu', get_template_directory_uri() . '/js/menu.js', [], null, true);
-    wp_enqueue_script('theme-menu', get_template_directory_uri() . '/js/gallery.js', [], null, true);
+    $theme_dir = get_template_directory_uri();
+
+    // Basis-Styles, die immer gebraucht werden
+    wp_enqueue_style('variable', $theme_dir . '/css/variable.css');
+    wp_enqueue_style('font', $theme_dir . '/css/font.css');
+    wp_enqueue_style('main', $theme_dir . '/css/main.css');
+    wp_enqueue_style('header', $theme_dir . '/css/header.css');
+    wp_enqueue_style('footer', $theme_dir . '/css/footer.css');
+    wp_enqueue_style('button', $theme_dir . '/css/button.css');
+    wp_enqueue_style('misc', $theme_dir . '/css/misc.css');
+
+    wp_enqueue_script('theme-menu', $theme_dir . '/js/menu.js', [], null, true);
+
+    if (is_front_page()) {
+        wp_enqueue_style('banner', $theme_dir . '/css/banner.css');
+        wp_enqueue_style('gallery', $theme_dir . '/css/gallery.css');
+        wp_enqueue_script('gallery-js', $theme_dir . '/js/gallery.js', [], null, true);
+
+    }
+
+
+
+    if (is_page_template('template-vorstand.php')) {
+        wp_enqueue_style('vorstand', $theme_dir . '/css/vorstand.css');
+    }
+
+    if (is_single()) {
+        wp_enqueue_style('single', $theme_dir . '/css/single.css');
+    }
+
+    if (is_page()) {
+        wp_enqueue_style('page', $theme_dir . '/css/page.css');
+    }
 }
 add_action('wp_enqueue_scripts', 'load_styles');
 
