@@ -150,6 +150,13 @@ $news_query = new WP_Query($args);
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>
   </div>
+
+  <div class="button-container">
+    <a href="/category/news" class="svo-button">
+      <i class="fa fa-newspaper-o"></i> Alle News anzeigen
+    </a>
+  </div>
+
 </section>
 
 <section class="section">
@@ -165,7 +172,8 @@ $news_query = new WP_Query($args);
   ?>
   <div class="button-container">
     <a href="/verein" class="svo-button">
-      <i class="fa fa-heart"></i> Mehr erfahren
+      <i class="fa fa-caret-right
+"></i> Mehr erfahren
     </a>
   </div>
 
