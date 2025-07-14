@@ -12,9 +12,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type='text/javascript' src="https://widget-prod.bfv.de/widget/widgetresource/widgetjs"></script>
-
+  <script src="https://kit.fontawesome.com/3dcd41d4f7.js" crossorigin="anonymous"></script>
+  
 </head>
 
 <body <?php body_class(); ?>>
@@ -111,33 +111,37 @@
               'menu_class' => 'mobile-menu',
               'fallback_cb' => false,
               'walker' => new class extends Walker_Nav_Menu {
-                public function start_lvl(&$output, $depth = 0, $args = null) {
-                  $output .= "<ul class=\"submenu\">";
-                  if ($depth === 0) {
-                    $url = '#';
-                    if (!empty($args->walker->last_item_url)) {
-                      $url = esc_url($args->walker->last_item_url);
-                    }
-                    $output .= "<li class=\"menu-item menu-item--overview\"><a href=\"$url\"><i class=\"fa fa-th overview-icon\"></i> Übersicht</a></li>";
+              public function start_lvl(&$output, $depth = 0, $args = null)
+              {
+                $output .= "<ul class=\"submenu\">";
+                if ($depth === 0) {
+                  $url = '#';
+                  if (!empty($args->walker->last_item_url)) {
+                    $url = esc_url($args->walker->last_item_url);
                   }
+                  $output .= "<li class=\"menu-item menu-item--overview\"><a href=\"$url\"><i class=\"fa fa-th overview-icon\"></i> Übersicht</a></li>";
                 }
-                public $last_item_url = '#';
-                public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
-                  $this->last_item_url = $item->url;
-                  $classes = implode(' ', $item->classes);
-                  $has_children = in_array('menu-item-has-children', $item->classes) ? ' has-children' : '';
-                  $output .= "<li class=\"menu-item $classes$has_children\"><a href=\"" . esc_url($item->url) . "\">" . esc_html($item->title);
-                  if ($has_children) {
-                    $output .= " <i class='fa fa-chevron-down submenu-toggle-icon'></i>";
-                  }
-                  $output .= "</a>";
+              }
+              public $last_item_url = '#';
+              public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+              {
+                $this->last_item_url = $item->url;
+                $classes = implode(' ', $item->classes);
+                $has_children = in_array('menu-item-has-children', $item->classes) ? ' has-children' : '';
+                $output .= "<li class=\"menu-item $classes$has_children\"><a href=\"" . esc_url($item->url) . "\">" . esc_html($item->title);
+                if ($has_children) {
+                  $output .= " <i class='fa fa-chevron-down submenu-toggle-icon'></i>";
                 }
-                public function end_el(&$output, $item, $depth = 0, $args = null) {
-                  $output .= "</li>";
-                }
-                public function end_lvl(&$output, $depth = 0, $args = null) {
-                  $output .= "</ul>";
-                }
+                $output .= "</a>";
+              }
+              public function end_el(&$output, $item, $depth = 0, $args = null)
+              {
+                $output .= "</li>";
+              }
+              public function end_lvl(&$output, $depth = 0, $args = null)
+              {
+                $output .= "</ul>";
+              }
               }
             ]);
             ?>
