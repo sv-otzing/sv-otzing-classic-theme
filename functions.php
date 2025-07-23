@@ -39,11 +39,7 @@ function load_styles()
 {
     $theme_dir = get_template_directory_uri();
 
-    // Basis-Styles, die immer gebraucht werden
-    wp_enqueue_style('main', $theme_dir . '/css/main.css');
-    wp_enqueue_style('header', $theme_dir . '/css/header.css');
-    wp_enqueue_style('footer', $theme_dir . '/css/footer.css');
-
+    wp_enqueue_style('theme', $theme_dir . '/css/theme.css');
     wp_enqueue_script('theme-menu', $theme_dir . '/js/menu.js', [], null, true);
 
     if (is_front_page()) {
@@ -52,18 +48,6 @@ function load_styles()
     }
 
 
-
-    if (is_page_template('vorstand.php')) {
-        wp_enqueue_style('vorstand', $theme_dir . '/css/vorstand.css');
-    }
-
-    if (is_single()) {
-        wp_enqueue_style('single', $theme_dir . '/css/single.css');
-    }
-
-    if (is_page()) {
-        wp_enqueue_style('page', $theme_dir . '/css/page.css');
-    }
 }
 add_action('wp_enqueue_scripts', 'load_styles');
 

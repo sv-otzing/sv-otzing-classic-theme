@@ -1,21 +1,21 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()):
-  while (have_posts()):
-    the_post(); ?>
+<?php if (have_pages()):
+  while (have_pages()):
+    the_page(); ?>
 
-    <?php if (has_post_thumbnail()): ?>
+    <?php if (has_page_thumbnail()): ?>
       <div class="page-header-image">
-        <?php the_post_thumbnail('full'); ?>
+        <?php the_page_thumbnail('full'); ?>
       </div>
     <?php endif; ?>
 
     <main class="page-main container">
-      <article <?php post_class('page-article'); ?>>
+      <article <?php page_class('page-article'); ?>>
 
-        <header class="post-header">
-          <h1 class="post-title"><?php the_title(); ?></h1>
-          <div class="post-meta">
+        <header class="page-header">
+          <h1 class="page-title"><?php the_title(); ?></h1>
+          <div class="page-meta">
             <span><?php echo get_the_date('d. F Y'); ?></span>
           </div>
 

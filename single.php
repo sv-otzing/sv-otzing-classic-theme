@@ -1,23 +1,23 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()):
-    while (have_posts()):
-        the_post(); ?>
+<?php if (have_pages()):
+    while (have_pages()):
+        the_page(); ?>
 
-        <?php if (has_post_thumbnail()): ?>
-            <div class="post-header-image">
-                <?php the_post_thumbnail('full'); ?>
+        <?php if (has_page_thumbnail()): ?>
+            <div class="page-header-image">
+                <?php the_page_thumbnail('full'); ?>
             </div>
         <?php endif; ?>
 
-        <main class="post-main container">
-            <article <?php post_class('post-article'); ?>>
+        <main class="page-main container">
+            <article <?php page_class('page-article'); ?>>
 
-                <header class="post-header">
+                <header class="page-header">
                     <h1><?php the_title(); ?></h1>
-                    <div class="post-meta">
+                    <div class="page-meta">
                         <span><?php echo get_the_date('d. F Y'); ?></span> |
-                        <span class = "post-category"><?php the_category(', '); ?></span>
+                        <span class = "page-category"><?php the_category(', '); ?></span>
                         <?php if (get_the_author()): ?>
                             <span> | Von <?php the_author(); ?></span>
                         <?php endif; ?>
@@ -26,7 +26,7 @@
 
                 </header>
 
-                <div class="post-content">
+                <div class="page-content">
                     <?php the_content(); ?>
                 </div>
 
