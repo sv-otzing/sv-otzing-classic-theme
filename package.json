@@ -1,0 +1,24 @@
+{
+  "name": "sv-otzing-classic-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ts162/sv-otzing-classic-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ts162/sv-otzing-classic-theme/issues"
+  },
+  "homepage": "https://github.com/ts162/sv-otzing-classic-theme#readme",
+  "dependencies": {
+    "feather-icons": "^4.29.2"
+  }
+}

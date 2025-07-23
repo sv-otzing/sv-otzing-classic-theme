@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+.feather {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    vertical-align: middle;
+    align-items: center;
+    align-self: center;
+}
+
+
 :root {
     --red: #d32f2f;
     --red-dark: #b71c1c;

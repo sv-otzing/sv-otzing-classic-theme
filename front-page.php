@@ -1,5 +1,7 @@
 <?php get_header() ?>
 
+
+
 <div class="news-gallery" id="newsGallery">
   <?php
   $args = array(
@@ -18,9 +20,9 @@
         <a href="<?php the_permalink(); ?>">
           <?php
           if (has_post_thumbnail()) {
-            the_post_thumbnail('medium_large', ['alt' => get_the_title()]);
+            the_post_thumbnail('medium_large', ['alt' => get_the_title(), 'loading' => 'lazy']);
           } else {
-            echo '<img src="https://picsum.photos/800/600?random=' . get_the_ID() . '" alt="">';
+            echo '<img src="https://picsum.photos/800/600?random=' . get_the_ID() . '" alt="" loading="lazy">';
           }
           ?>
         </a>
@@ -63,6 +65,8 @@ $news_query = new WP_Query($args);
 
 <section class="section">
   <h1>Nächste Spiele</h1>
+
+
   <div id="bfv1750015429708">Laden...</div>
   <script>
     BFVWidget.HTML5.zeigeVereinSpiele("00ES8GNI4S00000TVV0AG08LVUPGND5I", "bfv1750015429708", { height: "100%", width: "100%", selectedTab: BFVWidget.HTML5.vereinTabs.spiele, colorResults: "#1a1a1a", colorNav: "#ffffff", colorClubName: "#d32f2f", backgroundNav: "#d32f2f" });
@@ -72,23 +76,15 @@ $news_query = new WP_Query($args);
 <section class="section">
   <div class="banner-container">
     <div class="banner-modern">
-      <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-      </div>
       <div class="content">
         <div class="text-content">
           <h1>werde Teil des SV Otzing!</h1>
           <p>Engagiere dich in unserem Verein – ob als Spieler, Fan oder Unterstützer. Wir freuen uns auf dich!
           </p>
           <a href="/verein/mitgliedschaft" class="svo-button-white">
-            <i class="fa fa-futbol-o"></i> Jetzt Mitglied werden
+            <?php feather_icon(name: 'mouse-pointer'); ?>
+            Jetzt Mitglied werden
+          </a>
           </a>
         </div>
         <div class="photo-section">
@@ -124,10 +120,10 @@ $news_query = new WP_Query($args);
         <article class="news-item">
           <a href="<?php the_permalink(); ?>" class="news-link">
             <?php if (has_post_thumbnail()): ?>
-              <?php the_post_thumbnail('medium_large', array('class' => 'wp-post-image')); ?>
+              <?php the_post_thumbnail('medium_large', array('class' => 'wp-post-image', 'loading' => 'lazy')); ?>
             <?php else: ?>
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-news.jpg"
-                alt="<?php the_title(); ?>">
+                alt="<?php the_title(); ?>" loading="lazy">
             <?php endif; ?>
 
             <div class="news-overlay">
@@ -153,7 +149,8 @@ $news_query = new WP_Query($args);
 
   <div class="button-container">
     <a href="/category/news" class="svo-button">
-      <i class="fa fa-newspaper-o"></i> Alle News anzeigen
+      <?php feather_icon(name: 'book-open'); ?>
+      Alle News anzeigen
     </a>
   </div>
 

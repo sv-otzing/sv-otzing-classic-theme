@@ -602,7 +602,7 @@ nav.desktop::after {
   color: var(--red-light);
 }
 
-.menu-footer .fa {
+.menu-footer .feather {
   margin-right: 0.25rem;
 }
 

@@ -92,3 +92,12 @@ function svo_customize_register($wp_customize)
 add_action('customize_register', 'svo_customize_register');
 
 
+
+function feather_icon($name, $width = 24, $height = 24, $classes = 'feather')
+{
+    $template_url = get_template_directory_uri();
+    $class_attr = $classes ? ' class="' . esc_attr($classes) . '"' : '';
+    echo '<svg width="' . intval($width) . '" height="' . intval($height) . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' . $class_attr . '>';
+    echo '<use href="' . esc_url($template_url) . '/assets/feather/feather-sprite.svg#' . esc_attr($name) . '" />';
+    echo '</svg>';
+}

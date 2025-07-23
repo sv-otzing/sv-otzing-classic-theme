@@ -13,8 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <script type='text/javascript' src="https://widget-prod.bfv.de/widget/widgetresource/widgetjs"></script>
-  <script src="https://kit.fontawesome.com/3dcd41d4f7.js" crossorigin="anonymous"></script>
-  
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -32,12 +31,14 @@
         </div>
         <div class="top-nav-right">
           <?php if (get_theme_mod('facebook_url')): ?>
-            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank"> <i
-                class="fa fa-facebook"></i> </a>
+            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank">
+              <?php feather_icon('facebook'); ?>
+            </a>
           <?php endif; ?>
           <?php if (get_theme_mod('instagram_url')): ?>
-            <a href="<?php echo esc_url(get_theme_mod('instagram_url')); ?>" target="_blank"> <i
-                class="fa fa-instagram"></i></a>
+            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank">
+              <?php feather_icon('instagram'); ?>
+            </a>
           <?php endif; ?>
         </div>
       </div>
