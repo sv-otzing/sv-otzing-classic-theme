@@ -1,8 +1,20 @@
 <?php get_header(); ?>
 
-<main class="container archive-page">
-    <h1><?php the_archive_title(); ?></h1>
-    <p class="archive-description"><?php the_archive_description(); ?></p>
+<?php if (has_post_thumbnail()): ?>
+    <div class="page-header-image">
+        <?php the_post_thumbnail('full'); ?>
+    </div>
+<?php endif; ?>
+
+
+
+<main class="page-main container">
+    <header class="page-header">
+        <h1 class="page-title"><?php the_archive_title(); ?></h1>
+        <h2 class="archive-description"><?php the_archive_description(); ?></h2>
+    </header>
+
+
 
     <div class="news-grid">
         <?php if (have_posts()): ?>

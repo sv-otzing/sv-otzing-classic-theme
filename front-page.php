@@ -20,23 +20,26 @@
         <a href="<?php the_permalink(); ?>">
           <?php
           if (has_post_thumbnail()) {
-            the_post_thumbnail('medium_large', ['alt' => get_the_title(), 'loading' => 'lazy']);
+            the_post_thumbnail('medium', ['alt' => get_the_title(), 'loading' => 'lazy']);
           } else {
             echo '<img src="https://picsum.photos/800/600?random=' . get_the_ID() . '" alt="" loading="lazy">';
           }
           ?>
         </a>
         <div class="news-overlay">
-          <div class="news-meta">
-            <?php
-            echo get_the_date('d.m.Y') . ' – ';
-            $categories = get_the_category();
-            if (!empty($categories)) {
-              echo esc_html($categories[0]->name);
-            }
-            ?>
+          <div class="news-overlay-content">
+
+            <div class="news-meta">
+              <?php
+              echo get_the_date('d.m.Y') . ' – ';
+              $categories = get_the_category();
+              if (!empty($categories)) {
+                echo esc_html($categories[0]->name);
+              }
+              ?>
+            </div>
+            <div class="news-title"><?php the_title(); ?></div>
           </div>
-          <div class="news-title"><?php the_title(); ?></div>
         </div>
       </div>
       <?php
@@ -92,8 +95,10 @@ $news_query = new WP_Query($args);
           $startseite = get_page_by_title('Startseite');
           $logo = get_field("mitglieder_bild", $startseite->ID);
           if ($logo):
+            $img_url = $logo['sizes']['medium_large'];
+            $alt_text = $logo['alt'] ?: get_the_title($startseite->ID);
             ?>
-            <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+            <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($alt_text); ?>" loading="lazy">
             <?php
           endif;
           ?>
@@ -120,25 +125,29 @@ $news_query = new WP_Query($args);
         <article class="news-item">
           <a href="<?php the_permalink(); ?>" class="news-link">
             <?php if (has_post_thumbnail()): ?>
-              <?php the_post_thumbnail('medium_large', array('class' => 'wp-post-image', 'loading' => 'lazy')); ?>
+              <?php the_post_thumbnail('medium', array('class' => 'wp-post-image', 'loading' => 'lazy')); ?>
             <?php else: ?>
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/default-news.jpg"
                 alt="<?php the_title(); ?>" loading="lazy">
             <?php endif; ?>
 
             <div class="news-overlay">
-              <?php
-              $categories = get_the_category();
-              if (!empty($categories)):
-                ?>
-                <span class="news-category"><?php echo esc_html($categories[0]->name); ?></span>
-              <?php endif; ?>
+              <div class="news-overlay-content">
 
-              <h3 class="news-title entry-title"><?php the_title(); ?></h3>
+                <?php
+                $categories = get_the_category();
+                if (!empty($categories)):
+                  ?>
+                  <span class="news-category"><?php echo esc_html($categories[0]->name); ?></span>
+                <?php endif; ?>
 
-              <div class="news-meta entry-meta">
-                <?php echo get_the_date('d.m.Y'); ?>
+                <h3 class="news-title entry-title"><?php the_title(); ?></h3>
+
+                <div class="news-meta entry-meta">
+                  <?php echo get_the_date('d.m.Y'); ?>
+                </div>
               </div>
+
             </div>
           </a>
         </article>

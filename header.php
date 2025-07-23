@@ -55,11 +55,33 @@
         </a>
       </div>
       <?php
+      class Desktop_Overview_Walker extends Walker_Nav_Menu
+      {
+        private $parent_url = '#';
+
+        public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+        {
+          if ($depth === 0) {
+            $this->parent_url = esc_url($item->url);
+          }
+          parent::start_el($output, $item, $depth, $args, $id);
+        }
+
+        public function start_lvl(&$output, $depth = 0, $args = null)
+        {
+          $output .= '<ul>';
+          if ($depth === 0) {
+
+            $output .= '<li class="menu-item menu-item--overview"><a href="' . $this->parent_url . '"> ' . feather_icon_svg('grid') . 'Übersicht</a></li>';
+          }
+        }
+      }
       wp_nav_menu([
         'theme_location' => 'main_menu',
         'container' => false,
         'menu_class' => 'desktop-menu',
         'fallback_cb' => false,
+        'walker' => new Desktop_Overview_Walker()
       ]);
       ?>
       <ul class="desktop-menu-right">
@@ -113,7 +135,7 @@
                   if (!empty($args->walker->last_item_url)) {
                     $url = esc_url($args->walker->last_item_url);
                   }
-                  $output .= "<li class=\"menu-item menu-item--overview\"><a href=\"$url\"><i class=\"fa fa-th overview-icon\"></i> Übersicht</a></li>";
+                  $output .= '<li class="menu-item menu-item--overview"><a href="' . $url . '">' . feather_icon_svg('grid') . ' Übersicht</a></li>';
                 }
               }
               public $last_item_url = '#';
@@ -124,7 +146,7 @@
                 $has_children = in_array('menu-item-has-children', $item->classes) ? ' has-children' : '';
                 $output .= "<li class=\"menu-item $classes$has_children\"><a href=\"" . esc_url($item->url) . "\">" . esc_html($item->title);
                 if ($has_children) {
-                  $output .= " <i class='fa fa-chevron-down submenu-toggle-icon'></i>";
+                  $output .= feather_icon_svg('chevron-down', 24, 24, 'submenu-toggle-icon');
                 }
                 $output .= "</a>";
               }

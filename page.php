@@ -1,17 +1,17 @@
 <?php get_header(); ?>
 
-<?php if (have_pages()):
-  while (have_pages()):
-    the_page(); ?>
+<?php if (have_posts()):
+  while (have_posts()):
+    the_post(); ?>
 
-    <?php if (has_page_thumbnail()): ?>
+    <?php if (has_post_thumbnail()): ?>
       <div class="page-header-image">
-        <?php the_page_thumbnail('full'); ?>
+        <?php the_post_thumbnail('large'); ?>
       </div>
     <?php endif; ?>
 
     <main class="page-main container">
-      <article <?php page_class('page-article'); ?>>
+      <article <?php post_class('page-article'); ?>>
 
         <header class="page-header">
           <h1 class="page-title"><?php the_title(); ?></h1>
