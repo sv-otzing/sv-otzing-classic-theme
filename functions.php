@@ -110,3 +110,35 @@ function feather_icon_svg($name, $width = 24, $height = 24, $classes = 'feather'
     $svg .= '</svg>';
     return $svg;
 }
+
+function svo_register_sponsor_post_type()
+{
+    $labels = array(
+        'name' => 'Sponsoren',
+        'singular_name' => 'Sponsor',
+        'menu_name' => 'Sponsoren',
+        'name_admin_bar' => 'Sponsor',
+        'add_new' => 'Neu hinzufügen',
+        'add_new_item' => 'Neuen Sponsor hinzufügen',
+        'new_item' => 'Neuer Sponsor',
+        'edit_item' => 'Sponsor bearbeiten',
+        'view_item' => 'Sponsor ansehen',
+        'all_items' => 'Alle Sponsoren',
+        'search_items' => 'Sponsoren durchsuchen',
+        'not_found' => 'Keine Sponsoren gefunden',
+        'not_found_in_trash' => 'Keine Sponsoren im Papierkorb',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-megaphone', // optional
+        'supports' => array('title', 'thumbnail'),
+        'has_archive' => false,
+        'show_in_rest' => true,
+    );
+
+    register_post_type('sponsor', $args);
+}
+add_action('init', 'svo_register_sponsor_post_type');

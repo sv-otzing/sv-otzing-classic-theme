@@ -277,9 +277,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.pagination {
-    margin-top: 2rem;
-}
 
 .error-page {
     text-align: center;
@@ -1037,13 +1034,12 @@ nav.desktop::after {
     position: relative;
     margin-top: auto;
     width: 100%;
+    padding: 0.5rem 0.5rem;
 }
 
 .footer-sponsors {
     overflow: hidden;
     background: var(--red);
-    border-bottom: 2px solid white;
-    padding: 10px 0;
 }
 
 .swiper-slide img {
@@ -1254,4 +1250,62 @@ nav.desktop::after {
 .vorstand-contact a {
     color: #c4001d;
     text-decoration: none;
+}
+
+/* === Sponsor Swiper Footer Styles === */
+.footer-sponsors .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.footer-sponsors .swiper-slide:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-sponsors .swiper-slide img {
+    height: 50px;
+    filter: grayscale(100%) brightness(200%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.footer-sponsors .swiper-slide:hover img {
+    filter: grayscale(0%) brightness(100%);
+    transform: scale(1.1);
+}
+
+
+
+
+
+.footer-sponsors .custom-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+
+}
+
+.footer-sponsors .custom-bullet-active {
+    background-color: #fff;
+}
+
+.swiper-wrapper {
+    padding-bottom: 3rem;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 0px !important;
+
 }

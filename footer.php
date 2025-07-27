@@ -1,21 +1,38 @@
 <?php wp_footer() ?>
 
 <footer class="site-footer">
-
     <div class="footer-sponsors swiper sponsor-swiper">
         <div class="swiper-wrapper">
             <?php
-            $startseite = get_page_by_title('Startseite');
-            for ($i = 1; $i <= 10; $i++):
-                $logo = get_field("sponsor_logo_$i", $startseite->ID);
-                if ($logo):
-                    ?>
-                    <div class="swiper-slide">
-                        <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
-                    </div>
-                    <?php
-                endif;
-            endfor;
+            $sponsor_args = array(
+                'post_type' => 'sponsor',
+                'posts_per_page' => -1,
+                'orderby' => 'menu_order',
+                'order' => 'ASC'
+            );
+            $sponsor_query = new WP_Query($sponsor_args);
+
+            if ($sponsor_query->have_posts()):
+                while ($sponsor_query->have_posts()):
+                    $sponsor_query->the_post();
+                    $sponsor_url = get_field('sponsor_url');
+                    $logo_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+                    if ($logo_url):
+                        ?>
+                        <div class="swiper-slide">
+                            <?php if ($sponsor_url): ?>
+                                <a href="<?php echo esc_url($sponsor_url); ?>" target="_blank" rel="noopener">
+                                    <img src="<?php echo esc_url($logo_url); ?>" alt="<?php the_title_attribute(); ?>">
+                                </a>
+                            <?php else: ?>
+                                <img src="<?php echo esc_url($logo_url); ?>" alt="<?php the_title_attribute(); ?>">
+                            <?php endif; ?>
+                        </div>
+                        <?php
+                    endif;
+                endwhile;
+                wp_reset_postdata();
+            endif;
             ?>
         </div>
         <div class="swiper-pagination"></div>

@@ -49,16 +49,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   new Swiper('.sponsor-swiper', {
-    slidesPerView: '6',
-    loop: true,
-    spaceBetween: 5,
+    slidesPerView: 5,
+    slidesPerGroup: 5,
+    spaceBetween: 20,
+    speed: 1200,
+    loop: false,
     autoplay: {
-      delay: 2000,
+      delay: 4000,
       disableOnInteraction: false,
     },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
+      bulletClass: 'custom-bullet',
+      bulletActiveClass: 'custom-bullet-active',
     }
   });
 });
