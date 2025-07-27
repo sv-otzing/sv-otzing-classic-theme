@@ -70,6 +70,20 @@
               echo '<img src="https://picsum.photos/800/600?random=' . get_the_ID() . '" alt="" loading="lazy">';
             }
             ?>
+            <div class="news-overlay">
+              <div class="news-overlay-content">
+                <div class="news-meta">
+                  <?php
+                  echo get_the_date('d.m.Y') . ' – ';
+                  $categories = get_the_category();
+                  if (!empty($categories)) {
+                    echo esc_html($categories[0]->name);
+                  }
+                  ?>
+                </div>
+                <div class="news-title"><?php the_title(); ?></div>
+              </div>
+            </div>
           </a>
         </div>
         <?php
