@@ -1,7 +1,5 @@
 <?php get_header() ?>
 
-
-
 <div class="news-gallery" id="newsGallery">
   <?php
   $args = array(
@@ -50,8 +48,39 @@
   endif;
   ?>
 </div>
-<div class="carousel-dots" id="carouselDots">
 
+<div class="swiper news-swiper-mobile">
+  <div class="swiper-wrapper">
+    <?php
+    $args = array(
+      'posts_per_page' => 4,
+      'post_status' => 'publish'
+    );
+    $latest_posts = new WP_Query($args);
+
+    if ($latest_posts->have_posts()):
+      while ($latest_posts->have_posts()):
+        $latest_posts->the_post(); ?>
+        <div class="swiper-slide">
+          <a href="<?php the_permalink(); ?>">
+            <?php
+            if (has_post_thumbnail()) {
+              the_post_thumbnail('medium', ['alt' => get_the_title(), 'loading' => 'lazy']);
+            } else {
+              echo '<img src="https://picsum.photos/800/600?random=' . get_the_ID() . '" alt="" loading="lazy">';
+            }
+            ?>
+          </a>
+        </div>
+        <?php
+      endwhile;
+      wp_reset_postdata();
+    endif;
+    ?>
+  </div>
+
+  <!-- Optional: Navigation -->
+  <div class="swiper-pagination"></div>
 </div>
 
 
@@ -65,6 +94,7 @@ $args = array(
 
 $news_query = new WP_Query($args);
 ?>
+
 
 <section class="section">
   <h1>Nächste Spiele</h1>

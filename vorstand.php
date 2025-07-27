@@ -7,18 +7,17 @@ get_header();
 ?>
 
 <?php if (has_post_thumbnail()): ?>
-    <div class="post-header-image">
-        <?php the_post_thumbnail('full'); ?>
+    <div class="page-header-image">
+        <?php the_post_thumbnail('large'); ?>
     </div>
 <?php endif; ?>
 
 <main class="page-main container">
-    <header class="post-header">
-        <h1 class="post-title"><?php the_title(); ?></h1>
-        <div class="post-meta">
+    <header class="page-header">
+        <h1 class="page-title"><?php the_title(); ?></h1>
+        <div class="page-meta">
             <span><?php echo get_the_date('d. F Y'); ?></span>
         </div>
-
     </header>
 
 

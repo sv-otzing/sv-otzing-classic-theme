@@ -41,6 +41,21 @@ function load_styles()
 
     wp_enqueue_style('theme', $theme_dir . '/css/theme.css');
     wp_enqueue_script('theme-menu', $theme_dir . '/js/menu.js', [], null, true);
+    wp_enqueue_style(
+        'swiper-css',
+        get_template_directory_uri() . '/assets/swiper/swiper-bundle.min.css',
+        array(),
+        '11.1.3'
+    );
+
+    wp_enqueue_script(
+        'swiper-js',
+        get_template_directory_uri() . '/assets/swiper/swiper-bundle.min.js',
+        array(),
+        '11.1.3',
+        true
+    );
+
 
     if (is_front_page()) {
         wp_enqueue_style('front-page', $theme_dir . '/css/front-page.css');
@@ -86,10 +101,11 @@ function feather_icon($name, $width = 24, $height = 24, $classes = 'feather')
     echo '</svg>';
 }
 
-function feather_icon_svg($name, $width = 24, $height = 24, $classes = 'feather') {
+function feather_icon_svg($name, $width = 24, $height = 24, $classes = 'feather')
+{
     $template_url = get_template_directory_uri();
     $class_attr = $classes ? ' class="' . esc_attr($classes) . '"' : '';
-    $svg  = '<svg width="' . intval($width) . '" height="' . intval($height) . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' . $class_attr . '>';
+    $svg = '<svg width="' . intval($width) . '" height="' . intval($height) . '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' . $class_attr . '>';
     $svg .= '<use href="' . esc_url($template_url) . '/assets/feather/feather-sprite.svg#' . esc_attr($name) . '" />';
     $svg .= '</svg>';
     return $svg;
