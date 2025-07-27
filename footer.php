@@ -2,21 +2,23 @@
 
 <footer class="site-footer">
 
-    <div class="footer-sponsors">
-
-        <div class="sponsor-track">
+    <div class="footer-sponsors swiper sponsor-swiper">
+        <div class="swiper-wrapper">
             <?php
+            $startseite = get_page_by_title('Startseite');
             for ($i = 1; $i <= 10; $i++):
-                $startseite = get_page_by_title('Startseite');
                 $logo = get_field("sponsor_logo_$i", $startseite->ID);
                 if ($logo):
                     ?>
-                    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+                    <div class="swiper-slide">
+                        <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+                    </div>
                     <?php
                 endif;
             endfor;
             ?>
         </div>
+        <div class="swiper-pagination"></div>
     </div>
 
     <div class="footer-main">
@@ -35,8 +37,7 @@
         <div class="footer-column">
             <h4>ANFAHRT</h4>
             <p class="white">
-                <a href="https://maps.app.goo.gl/pWgCqwKZcCDQvHDz6" target="_blank"
-                    rel="noopener noreferrer">
+                <a href="https://maps.app.goo.gl/pWgCqwKZcCDQvHDz6" target="_blank" rel="noopener noreferrer">
                     Schulweg 10<br>94563 Otzing
                 </a>
             </p>
