@@ -63,6 +63,28 @@ document.addEventListener('DOMContentLoaded', function () {
       clickable: true,
       bulletClass: 'custom-bullet',
       bulletActiveClass: 'custom-bullet-active',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 10
+      },
+      576: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 15
+      },
+      768: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        spaceBetween: 20
+      },
+      1024: {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+        spaceBetween: 20
+      }
     }
   });
 });

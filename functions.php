@@ -55,11 +55,11 @@ function load_styles()
         '11.1.3',
         true
     );
+    wp_enqueue_script('gallery-js', $theme_dir . '/js/gallery.js', [], null, true);
 
 
     if (is_front_page()) {
         wp_enqueue_style('front-page', $theme_dir . '/css/front-page.css');
-        wp_enqueue_script('gallery-js', $theme_dir . '/js/gallery.js', [], null, true);
     }
 
 

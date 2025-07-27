@@ -1042,7 +1042,7 @@ nav.desktop::after {
     background: var(--red);
 }
 
-.swiper-slide img {
+.footer-sponsors .swiper-slide img {
     height: 50px;
     object-fit: contain;
 
@@ -1161,6 +1161,8 @@ nav.desktop::after {
     .footer-logo {
         height: 120px;
     }
+
+
 
     .footer-clubname {
         font-size: 1.2rem;
@@ -1300,7 +1302,7 @@ nav.desktop::after {
 }
 
 .swiper-wrapper {
-    padding-bottom: 3rem;
+    padding-bottom: 30px;
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets,

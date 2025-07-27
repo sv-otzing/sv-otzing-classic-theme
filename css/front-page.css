@@ -173,7 +173,7 @@
 
 
 .news-gallery .news-card:hover {
-    flex: 2;
+    flex: 1.5;
     z-index: 1;
 }
 
