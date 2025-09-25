@@ -49,7 +49,7 @@
         </div>
         <div class="footer-column">
             <h4>KONTAKT</h4>
-            <p class="white">Email: <a href="mailto:vorstand@sv-otzing.de">info@sv-otzing.de</a></p>
+            <p class="white">Email: <a href="mailto:vorstand@sv-otzing.de">vorstand@sv-otzing.de</a></p>
         </div>
         <div class="footer-column">
             <h4>ANFAHRT</h4>
