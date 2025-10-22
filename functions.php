@@ -87,6 +87,13 @@ function svo_customize_register($wp_customize)
         'section' => 'svo_social',
         'type' => 'url',
     ]);
+
+    $wp_customize->add_setting('whatsapp_url');
+    $wp_customize->add_control('whatsapp_url', [
+        'label' => 'WhatsApp Kanal',
+        'section' => 'svo_social',
+        'type' => 'url',
+    ]);
 }
 add_action('customize_register', 'svo_customize_register');
 

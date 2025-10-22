@@ -28,10 +28,16 @@
             </a>
           <?php endif; ?>
           <?php if (get_theme_mod('instagram_url')): ?>
-            <a href="<?php echo esc_url(get_theme_mod('facebook_url')); ?>" target="_blank">
+            <a href="<?php echo esc_url(get_theme_mod('instagram_url')); ?>" target="_blank">
               <?php feather_icon('instagram'); ?>
             </a>
           <?php endif; ?>
+          <?php if (get_theme_mod('whatsapp_url')): ?>
+            <a href="<?php echo esc_url(get_theme_mod('whatsapp_url')); ?>" target="_blank">
+              <?php feather_icon('message-circle'); ?>
+            </a>
+          <?php endif; ?>
+
         </div>
       </div>
     </nav>
