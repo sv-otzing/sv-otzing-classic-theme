@@ -109,6 +109,26 @@ $args = array(
 $news_query = new WP_Query($args);
 ?>
 
+<section class="section">
+  <div class="banner-container">
+    <?php
+    $startseite = get_page_by_title('Startseite');
+    $banner_image = get_field("banner_bild", $startseite->ID);
+    $banner_link = get_field("banner_link", $startseite->ID);
+    
+    if ($banner_image && $banner_link):
+      $img_url = $banner_image['sizes']['large'];
+      $alt_text = $banner_image['alt'] ?: 'Banner';
+      ?>
+      <a href="<?php echo esc_url($banner_link); ?>" class="banner-link">
+        <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($alt_text); ?>" loading="lazy" class="banner-image">
+      </a>
+      <?php
+    endif;
+    ?>
+  </div>
+</section>
+
 
 <section class="section">
   <h1>Nächste Spiele</h1>
